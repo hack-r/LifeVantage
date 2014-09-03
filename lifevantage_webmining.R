@@ -7,9 +7,8 @@
 # Load Functions and Libraries --------------------------------------------
 source("lifevantage_functions.R")
 
-
 # Scrape Google Scholar ---------------------------------------------------
-
+gs_protandim <- get_google_scholar_df( u = "http://scholar.google.com/scholar?as_q=protandim")
 
 # Scrape Yahoo! News ------------------------------------------------------
 

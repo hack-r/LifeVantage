@@ -5,7 +5,14 @@
 
 
 
-# Google Scholar Scraper --------------------------------------------------
+# Packages ----------------------------------------------------------------
+require(tm)
+require(tm.plugin.webmining)
+require(XML)
+require(RCurl)
+
+# Functions ---------------------------------------------------------------
+# get_google_scholar_df scraping function:
 get_google_scholar_df <- function(u) {
   html <- getURL(u)
   
