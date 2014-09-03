@@ -10,6 +10,8 @@ require(tm)
 require(tm.plugin.webmining)
 require(XML)
 require(RCurl)
+require(scrapeR)
+require(TTR)
 
 # Functions ---------------------------------------------------------------
 # get_google_scholar_df scraping function:
@@ -19,7 +21,7 @@ get_google_scholar_df <- function(u) {
   # parse HTML into tree structure
   doc <- htmlParse(html)
   
-  # I hacked my own version of xpathSApply to deal with cases that return NULL which were causing me problems
+  # Version of xpathSApply to deal with cases that return NULL 
   GS_xpathSApply <- function(doc, path, FUN) {
     path.base <- "/html/body/div[@class='gs_r']"
     nodes.len <- length(xpathSApply(doc, "/html/body/div[@class='gs_r']"))
