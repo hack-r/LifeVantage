@@ -6,12 +6,13 @@
 
 
 # Packages ----------------------------------------------------------------
-require(tm)
-require(tm.plugin.webmining)
-require(XML)
 require(RCurl)
 require(scrapeR)
+require(SnowballC)
+require(tm)
+require(tm.plugin.webmining)
 require(TTR)
+require(XML)
 
 # Functions ---------------------------------------------------------------
 # get_google_scholar_df scraping function:
