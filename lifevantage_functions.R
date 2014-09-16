@@ -3,19 +3,22 @@
 ## Author: Jason D. Miller, MS, MS
 ## Description: Functions and packages used in my analysis of LifeVantage
 
-
-
 # Packages ----------------------------------------------------------------
-require(RCurl)
-require(scrapeR)
-require(SnowballC)
+#require(RCurl)
+#require(scrapeR)
+#require(SnowballC)
 require(tm)
 require(tm.plugin.webmining)
-require(TTR)
-require(XML)
+#require(TTR)
+#require(XML)
+
 
 # Functions ---------------------------------------------------------------
-# get_google_scholar_df scraping function:
+
+# Note: this function worked years ago and I hoped to use it here but it's 
+#       apparently no longer working. I will leave it here so that I can try
+#       to restore Google Scholar scraping capabilities to R as a future
+#       project.
 get_google_scholar_df <- function(u) {
   html <- getURL(u)
   
