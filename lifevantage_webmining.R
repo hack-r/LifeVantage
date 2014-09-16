@@ -89,7 +89,7 @@ termMatrix.1gram <- tdm3.1g %*% t(tdm3.1g)
 termMatrix.1gram[5:10,5:10]
 termMatrix.1gram[1:10,1:10]
 
-# Create a WordCloud to Visualize the Text Data ---------------------------
+# Create a 1-gram Word Cloud to Visualize the Text Data ---------------------
 notsparse <- tdm2.1g
 m = as.matrix(notsparse)
 v = sort(rowSums(m),decreasing=TRUE)
@@ -102,3 +102,27 @@ wordcloud(words = d$word,
           scale = c(3,.8), 
           random.order = F,
           colors = pal)
+
+# Create an n-gram Word Cloud ----------------------------------------------
+tdm.ng <- TermDocumentMatrix(ds5.1g, control = list(tokenize = BigramTokenizer))
+dtm.ng <- DocumentTermMatrix(ds5.1g, control = list(tokenize = BigramTokenizer))
+
+# Try removing sparse terms at a few different levels
+tdm89.ng <- removeSparseTerms(tdm.ng, 0.89)
+tdm9.ng  <- removeSparseTerms(tdm.ng, 0.9)
+tdm91.ng <- removeSparseTerms(tdm.ng, 0.91)
+tdm92.ng <- removeSparseTerms(tdm.ng, 0.92)
+
+notsparse <- tdm91.ng
+m = as.matrix(notsparse)
+v = sort(rowSums(m),decreasing=TRUE)
+d = data.frame(word = names(v),freq=v)
+
+# Create the word cloud
+pal = brewer.pal(9,"BuPu")
+wordcloud(words = d$word, 
+          freq = d$freq, 
+          scale = c(3,.8), 
+          random.order = F,
+          colors = pal)
+
