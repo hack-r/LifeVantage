@@ -5,6 +5,7 @@
 
 # Packages ----------------------------------------------------------------
 #require(RCurl)
+require(RWeka)
 #require(scrapeR)
 #require(SnowballC)
 require(tm)

@@ -38,14 +38,14 @@ ts.yahoonews <- WebCorpus(YahooNewsSource("TrueScience"))
 lv.yahooinplay <- WebCorpus(YahooInplaySource("LifeVantage"))
 
 # Scrape Google Scholar ---------------------------------------------------
-gs_protandim   <- get_google_scholar_df( u = "http://scholar.google.com/scholar?as_q=protandim") # Not working
-gs_lifevantage <- get_google_scholar_df( u = "http://scholar.google.com/scholar?as_q=lifevantage") # Not working
+# gs_protandim   <- get_google_scholar_df( u = "http://scholar.google.com/scholar?as_q=protandim") # Not working
+# gs_lifevantage <- get_google_scholar_df( u = "http://scholar.google.com/scholar?as_q=lifevantage") # Not working
 
 # Text Mining the Results -------------------------------------------------
 corpus <- c(googlefinance, lv.googlenews, p.googlenews, ts.googlenews, lv.yahoofinance, lv.yahoonews, p.yahoonews,
             ts.yahoonews, lv.yahooinplay) #lv.nytimes, p.nytimes, ts.nytimes,lv.reutersnews, p.reutersnews,  ts.reutersnews,
 
-inspect(corpus)
+corpus
 wordlist <- c("lfvn", "lifevantage", "protandim", "truescience", "company", "fiscal", "nasdaq", "quarter", 
               "market", "statement", "stock", "share", "statement", "statements", "financial", "sale", "corporate", "corporation",
               "2014")
